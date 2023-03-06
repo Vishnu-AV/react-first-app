@@ -1,7 +1,8 @@
 export function Profile() {
+    const imgUrl = "https://i.imgur.com/MK3eW3As.jpg";
     return (
       <img
-        src="https://i.imgur.com/MK3eW3As.jpg"
+        src={imgUrl}
         alt="logo"
       />
     );
