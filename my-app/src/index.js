@@ -3,17 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import TodoList from './Todo'
+import TodoList from './Todo';
+import PersonProfile from './pass-props'
 
+const person={name:'Vishnu', url: 'https://i.imgur.com/7vQD0fPs.jpg'};
+const size= 20;
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
     <TodoList />
+    <PersonProfile person={person}
+        size={size} />
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
