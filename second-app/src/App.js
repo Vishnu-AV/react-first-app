@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Details from './details';
 
 class App extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class App extends React.Component {
       return {
         date: new Date(),
         name: state.names[this.state.date.getSeconds() % 2],
-        counter: props.data,
+        subject: props.data,
       };
     });
   }
@@ -32,6 +33,7 @@ class App extends React.Component {
       <div className="App">
         <h1>Hello, {this.state.name}!</h1>
         <h2>The time is - {this.state.date.toLocaleTimeString()}.</h2>
+        <Details props={this.state} />
       </div>
     );
   }
