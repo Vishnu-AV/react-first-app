@@ -17,7 +17,12 @@ function App() {
   return (<><ul>{listItems}</ul><Comment
     date={comment.date}
     text={comment.text}
-    author={comment.author} /></>);
+    author={comment.author} />
+    <WelcomeMessage> Here is some message </WelcomeMessage>
+</>);
+}
+function WelcomeMessage({ children }) {
+  return (<><p>{children}</p></>)
 }
 function formatName(user) {
   return user.firstName + " " + user.lastName;
