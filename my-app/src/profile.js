@@ -1,9 +1,4 @@
-export function Profile() {
-    const imgUrl = "https://i.imgur.com/MK3eW3As.jpg";
-    return (
-      <img
-        src={imgUrl}
-        alt="logo"
-      />
-    );
+export function Profile({person}) {
+   const src =  'https://i.imgur.com/' +   person.imageId +   's.jpg';
+   return <img alt={person.name} src={src} />;
   }

@@ -1,17 +1,20 @@
 import "./App.css";
 import { Profile } from "./profile";
+import {people} from './sample-data'
 
 function App() {
-  const name = "Vishnu";
-  return (
-    <div className="App">
-      <p>Hi {name}</p>
-      <h1>Hello, {formatName(user)}!</h1>
-      {element}
-      {tick()}
-      <Profile />
-    </div>
+  const name = "Vishnu";;
+      const listItems = people.map(person =>
+    <li key={person.id}>
+      <Profile person={person}/>
+      <p>
+        <b>{person.name}</b>
+          {' ' + person.profession + ' '}
+          known for {person.accomplishment}
+      </p>
+    </li>
   );
+  return <ul>{listItems}</ul>;
 }
 function formatName(user) {
   return user.firstName + " " + user.lastName;
