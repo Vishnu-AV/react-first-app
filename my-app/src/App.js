@@ -1,8 +1,10 @@
 import "./App.css";
 import { Profile } from "./profile";
 import { people } from "./sample-data";
-import Comment from "./comment"
+import Comment from "./comment";
 
+
+let name = 'Vishnu';
 function App() {
   const listItems = people.map((person) => (
     <li key={person.id}>
@@ -19,7 +21,15 @@ function App() {
     text={comment.text}
     author={comment.author} />
     <WelcomeMessage> Here is some message </WelcomeMessage>
+    <h2>{name}</h2>
+    <button onClick={handleClickEvent}>Click here</button>
 </>);
+}
+const handleClickEvent = (event) => {
+  alert('button clicked');
+}
+const updatename = (value) => {
+  name = value;
 }
 function WelcomeMessage({ children }) {
   return (<><p>{children}</p></>)
