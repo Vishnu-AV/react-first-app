@@ -26,7 +26,7 @@ export default class LoginControl extends React.Component {
     }
 
     return (
-      <div>
+      <div className="loginContainer">
         <Greeting isLoggedIn={isLoggedIn} />
         {button}
         {!isLoggedIn && <a>forgot password?</a>}

@@ -9,8 +9,8 @@ class App extends React.Component {
     // The only place where we can assign this.state is the constructor.
     this.state = {
       date: new Date(),
-      name: "Kutta",
-      names: ["Kutta", "Potta"],
+      name: "Sir",
+      names: ["Sir", "Ma'am"],
     };
   }
   componentDidMount() {
