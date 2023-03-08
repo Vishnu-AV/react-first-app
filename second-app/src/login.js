@@ -1,4 +1,5 @@
 import React from "react";
+import RegisterForm from './register-form'
 
 export default class LoginControl extends React.Component {
   constructor(props) {
@@ -27,6 +28,9 @@ export default class LoginControl extends React.Component {
 
     return (
       <div className="loginContainer">
+        <h3>Register</h3>
+        <RegisterForm />
+        <hr />
         <Greeting isLoggedIn={isLoggedIn} />
         {button}
         {!isLoggedIn && <a>forgot password?</a>}

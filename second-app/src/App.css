@@ -9,3 +9,6 @@
   padding: 10px;
   position: relative;
 }
+.regForm {
+  display: block;
+}
