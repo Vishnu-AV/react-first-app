@@ -6,11 +6,15 @@ export default class RegisterForm extends React.Component {
   }
 
   handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+    const value =
+      event.target.type === "checkbox"
+        ? event.target.checked
+        : event.target.value;
+    this.setState({ [event.target.name]: value });
   };
 
   handleSubmit = (event) => {
-    console.log(this.state)
+    console.log(this.state);
     alert("A name was submitted: " + this.state.name);
     event.preventDefault();
   };
@@ -30,7 +34,11 @@ export default class RegisterForm extends React.Component {
         <br />
         <label>
           Address:
-          <textarea name="address" value={this.state.address} onChange={this.handleChange} />
+          <textarea
+            name="address"
+            value={this.state.address}
+            onChange={this.handleChange}
+          />
         </label>
         <br />
         <label>
@@ -45,10 +53,14 @@ export default class RegisterForm extends React.Component {
         <br />
         <label>
           Color
-          <select value={this.state.color} anme="color" onChange={this.handleChange}>
-            <option value="grapefruit">Red</option>
-            <option value="lime">ORange</option>
-            <option value="mango">Yellow</option>
+          <select
+            value={this.state.color}
+            name="color"
+            onChange={this.handleChange}
+          >
+            <option value="red">Red</option>
+            <option value="orange">ORange</option>
+            <option value="yellow">Yellow</option>
           </select>
         </label>
         <input type="submit" value="Submit" />
