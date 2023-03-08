@@ -3,6 +3,7 @@ import "./App.css";
 import Details from './details';
 import LoginControl from './login'
 import Calculator from './temperature-calculator/calculator';
+import SignUpDialog from './dialog';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,6 +40,7 @@ class App extends React.Component {
         <Details props={this.state} />
         <hr />
         <Calculator />
+        <SignUpDialog />
       </div>
     );
   }
