@@ -14,7 +14,6 @@ export default class RegisterForm extends React.Component {
   };
 
   handleSubmit = (event) => {
-    console.log(this.state);
     alert("A name was submitted: " + this.state.name);
     event.preventDefault();
   };

@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Details from './details';
 import LoginControl from './login'
+import Calculator from './temperature-calculator/calculator';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,9 +34,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Hello, {this.state.name}!</h1>
-        <h2>The time is - {this.state.date.toLocaleTimeString()}.</h2>
+        <span>The time is - {this.state.date.toLocaleTimeString()}.</span>
         <LoginControl />
         <Details props={this.state} />
+        <hr />
+        <Calculator />
       </div>
     );
   }
