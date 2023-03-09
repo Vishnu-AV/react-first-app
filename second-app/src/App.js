@@ -4,6 +4,7 @@ import Details from './details';
 import LoginControl from './login'
 import Calculator from './temperature-calculator/calculator';
 import SignUpDialog from './dialog';
+import Gallery from './useState-implement';
 
 class App extends React.Component {
   constructor(props) {
@@ -41,6 +42,8 @@ class App extends React.Component {
         <hr />
         <Calculator />
         <SignUpDialog />
+        <hr />
+        <Gallery />
       </div>
     );
   }
