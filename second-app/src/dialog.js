@@ -1,4 +1,5 @@
 import React from "react";
+import Player from './video-player';
 
 export default class SignUpDialog extends React.Component {
   constructor(props) {
@@ -30,11 +31,11 @@ export default class SignUpDialog extends React.Component {
 }
 function Dialog(props) {
   return (
-    <FancyBorder color="blue">
+    <><FancyBorder color="blue">
       <h1 className="Dialog-title">{props.title}</h1>
       <p className="Dialog-message">{props.message}</p>
       {props.children}
-    </FancyBorder>
+    </FancyBorder><Player /></>
   );
 }
 
