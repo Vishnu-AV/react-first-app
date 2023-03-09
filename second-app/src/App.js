@@ -5,7 +5,7 @@ import LoginControl from './login'
 import Calculator from './temperature-calculator/calculator';
 import SignUpDialog from './dialog';
 import Gallery from './useState-implement';
-
+import LifeCycle from './lifecycle-example';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -35,6 +35,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <LifeCycle />
+        <br />
         <h1>Hello, {this.state.name}!</h1>
         <span>The time is - {this.state.date.toLocaleTimeString()}.</span>
         <LoginControl />
