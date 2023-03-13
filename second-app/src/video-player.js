@@ -1,16 +1,20 @@
 import { useState, useRef, useEffect } from "react";
+import createConnection from './temperature-calculator/calc-service';
 
 function VideoPlayer({ src, isPlaying }) {
   const ref = useRef(null);
   useEffect(() => {
     if (isPlaying) {
       ref.current.play();
-      console.log('play')
+      console.log("play");
     } else {
       ref.current.pause();
-      console.log('pause')
+      console.log("pause");
     }
-  },[isPlaying]);
+    return () => {
+      ref.current.pause();
+    };
+  }, [isPlaying]);
 
   return <video ref={ref} src={src} loop playsInline />;
 }

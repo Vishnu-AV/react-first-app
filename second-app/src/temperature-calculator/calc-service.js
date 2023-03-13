@@ -20,3 +20,13 @@ export function toCelsius(fahrenheit) {
 export function toFahrenheit(celsius) {
   return (celsius * 9) / 5 + 32;
 }
+export function createConnection() {
+  return {
+    connect() {
+      console.log('✅ Connecting...');
+    },
+    disconnect() {
+      console.log('❌ Disconnected.');
+    }
+  };
+}
