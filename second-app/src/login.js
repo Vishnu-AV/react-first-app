@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useMemo, useReducer, useState } from "react";
 import RegisterForm from "./register-form";
 
 export default class LoginControl extends React.Component {
@@ -75,12 +75,17 @@ function reducer(state, action) {
 }
 function WarningBanner(props) {
   const [name, dispatch] = useReducer(reducer, "Login");
+  const [count, setCount] = useState(20);
+  const expensiveCount = useMemo(() => {
+    return count ** 3;
+  },[count])
   // if (!props.warn) {
   //   return null;
   // }
   return (
     <div className="warning">
       Warning!
+      <p> count {count} -- {expensiveCount}</p>
       <button onClick={() => dispatch({ name: "Signup" })}>{name}</button>
     </div>
   );
