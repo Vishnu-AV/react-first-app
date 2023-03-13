@@ -6,6 +6,7 @@ import Calculator from './temperature-calculator/calculator';
 import SignUpDialog from './dialog';
 import Gallery from './useState-implement';
 import LifeCycle from './lifecycle-example';
+import MouseTracker from './render-props';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -46,6 +47,8 @@ class App extends React.Component {
         <SignUpDialog />
         <hr />
         <Gallery />
+        
+        <MouseTracker />
       </div>
     );
   }
