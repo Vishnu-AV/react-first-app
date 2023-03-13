@@ -1,5 +1,5 @@
-import React from "react";
-import RegisterForm from './register-form'
+import React, { useReducer } from "react";
+import RegisterForm from "./register-form";
 
 export default class LoginControl extends React.Component {
   constructor(props) {
@@ -47,11 +47,21 @@ function LogoutButton(props) {
 }
 function Greeting(props) {
   const isLoggedIn = props.isLoggedIn;
-  
+
   if (isLoggedIn) {
-    return <><UserGreeting /><WarningBanner warn={isLoggedIn} /></>;
+    return (
+      <>
+        <UserGreeting />
+        <WarningBanner warn={isLoggedIn} />
+      </>
+    );
   }
-  return <><GuestGreeting /><WarningBanner warn={isLoggedIn} /></>;
+  return (
+    <>
+      <GuestGreeting />
+      <WarningBanner warn={isLoggedIn} />
+    </>
+  );
 }
 function UserGreeting(props) {
   return <h1>Welcome back!</h1>;
@@ -60,9 +70,18 @@ function UserGreeting(props) {
 function GuestGreeting(props) {
   return <h1>Please sign up.</h1>;
 }
+function reducer(state, action) {
+  return (state = action.name);
+}
 function WarningBanner(props) {
-  if (!props.warn) {
-    return null;
-  }
-  return <div className="warning">Warning!</div>;
+  const [name, dispatch] = useReducer(reducer, "Login");
+  // if (!props.warn) {
+  //   return null;
+  // }
+  return (
+    <div className="warning">
+      Warning!
+      <button onClick={() => dispatch({ name: "Signup" })}>{name}</button>
+    </div>
+  );
 }
