@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Link, Routes, Route } from "react-router-dom";
 import Todos from "./components/todos";
-import TodoList from "./components/todolist";
+import DisplayTodos from "./components/todolist";
 import { ThemeContext, themes } from "./theme/theme-context";
 import ThemedButton from "./theme/themed-button";
 
@@ -46,8 +46,8 @@ class App extends React.Component {
           </ul>
         </nav>
         <Routes>
-          <Route path="/" element={<TodoList />} />
           <Route path="/todo" element={<Todos />} />
+          <Route path="/" element={<DisplayTodos />} />
         </Routes>
       </div>
     );
