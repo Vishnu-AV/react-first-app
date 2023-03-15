@@ -39,7 +39,7 @@ const TodoItem = (props) => {
         ref={inputRef}
         disabled={inputRef}
         defaultValue={item.item}
-        onKeyPress={(e) => update(item.id, inputRef.current.value, e)}
+        onKeyDown={(e) => update(item.id, inputRef.current.value, e)}
       />
       <div className="btns">
         <Button

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Button } from "react-bootstrap";
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+
 
 import {
   addTodos,
@@ -29,7 +31,8 @@ const DisplayTodos = (props) => {
   const [sort, setSort] = useState("active");
   return (
     <div className="displaytodos">
-      <div className="buttons">
+      <div className="buttons m-3">
+      <ButtonGroup aria-label="Basic example">
         <Button
           variant="primary"
           size="l"
@@ -55,6 +58,7 @@ const DisplayTodos = (props) => {
         >
           All
         </Button>
+        </ButtonGroup>
       </div>
       <ul>
         {props.todos.length > 0 && sort === "active"

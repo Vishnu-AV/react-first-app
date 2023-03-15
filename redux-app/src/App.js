@@ -4,9 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Todos from "./components/todos";
 import DisplayTodos from "./components/todolist";
 import { ThemeContext, themes } from "./theme/theme-context";
-import ThemedButton from "./theme/themed-button";
-import NavBar from "./nav-bar";
-import Toolbar from "./theme/toolbar";
+import NavBar from "./components/nav-bar";
 
 class App extends React.Component {
   constructor(props) {
