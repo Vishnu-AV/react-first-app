@@ -35,6 +35,9 @@ class App extends React.Component {
     fetch("https://jsonplaceholder.typicode.com/posts", {
       method: "POST",
       body: JSON.stringify({ name: "Vishnu", id: 232324 }),
+      headers: {
+        "Content-Type": "application/json"
+      }
     })
       .then((res) => {
         // console.log(res.json());
