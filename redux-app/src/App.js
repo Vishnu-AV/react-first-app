@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.css";
-import { Link, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Todos from "./components/todos";
 import DisplayTodos from "./components/todolist";
 import { ThemeContext, themes } from "./theme/theme-context";
 import ThemedButton from "./theme/themed-button";
+import NavBar from "./nav-bar";
 
 // An intermediate component that uses the ThemedButton
 function Toolbar(props) {
@@ -35,16 +36,9 @@ class App extends React.Component {
           </ThemeContext.Provider>
           <ThemedButton />
         </section>
-        <nav className="nav-bar">
-          <ul>
-            <li>
-              <Link to="/"> List</Link>
-            </li>
-            <li>
-              <Link to="todo"> Todo</Link>
-            </li>
-          </ul>
-        </nav>
+        <ThemeContext.Provider value={this.state.theme}>
+        <NavBar />
+        </ThemeContext.Provider>
         <Routes>
           <Route path="/todo" element={<Todos />} />
           <Route path="/" element={<DisplayTodos />} />
