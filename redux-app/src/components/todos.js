@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { addTodos } from "../redux/reducer";
+import { useNavigate } from "react-router-dom";
 
 const mapStateToProps = (state) => {
   return {
@@ -16,6 +17,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const Todos = (props) => {
   const [todo, setTodo] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setTodo(e.target.value);
@@ -30,7 +32,8 @@ const Todos = (props) => {
         item: todo,
         completed: false,
       });
-      setTodo("");
+      setTodo("");      
+      navigate('/');
     }
   };
   //console.log("props from store", props);
@@ -49,6 +52,7 @@ const Todos = (props) => {
         className="add-btn"
         onClick={() => add()}
       >
+        Add
       </button>
       <br />
     </div>

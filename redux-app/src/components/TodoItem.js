@@ -47,7 +47,7 @@ const TodoItem = (props) => {
           whileTap={{ scale: 0.9 }}
           onClick={() => changeFocus()}
         >
-          {" "} {" "}
+          Edit
         </button>
         {item.completed === false && (
           <button
@@ -56,6 +56,7 @@ const TodoItem = (props) => {
             style={{ color: "green" }}
             onClick={() => completeTodo(item.id)}
           >
+            Complete
           </button>
         )}
         <button
@@ -64,8 +65,8 @@ const TodoItem = (props) => {
           style={{ color: "red" }}
           onClick={() => removeTodo(item.id)}
         >
-          {" "}
-        </button>{" "}
+         Remove
+        </button>
       </div>
       {item.completed && <span className="completed">done</span>}
     </li>
