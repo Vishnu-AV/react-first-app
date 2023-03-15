@@ -6,11 +6,7 @@ import DisplayTodos from "./components/todolist";
 import { ThemeContext, themes } from "./theme/theme-context";
 import ThemedButton from "./theme/themed-button";
 import NavBar from "./nav-bar";
-
-// An intermediate component that uses the ThemedButton
-function Toolbar(props) {
-  return <ThemedButton onClick={props.changeTheme}>Change Theme</ThemedButton>;
-}
+import Toolbar from "./theme/toolbar";
 
 class App extends React.Component {
   constructor(props) {
@@ -29,15 +25,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Todo app</h1>
-        <section>
-          <ThemeContext.Provider value={this.state.theme}>
-            <Toolbar changeTheme={this.toggleTheme} />
-          </ThemeContext.Provider>
-          <ThemedButton />
-        </section>
         <ThemeContext.Provider value={this.state.theme}>
-        <NavBar />
+          <NavBar changeTheme={this.toggleTheme} />
         </ThemeContext.Provider>
         <Routes>
           <Route path="/todo" element={<Todos />} />

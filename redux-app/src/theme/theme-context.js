@@ -3,12 +3,14 @@ export const themes = {
     light: {
       foreground: '#000000',
       background: '#eeeeee',
-      color: '#222222'
+      color: '#222222',
+      name: 'warning'
     },
     dark: {
       foreground: '#ffffff',
       background: '#222222',
-      color: '#eeeeee'
+      color: '#eeeeee',
+      name: 'dark'
     },
   };
   
