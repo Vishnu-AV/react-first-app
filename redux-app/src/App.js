@@ -21,6 +21,17 @@ class App extends React.Component {
   }
 
   render() {
+    fetch('https://jsonplaceholder.typicode.com/posts/1?name=vishnu')
+    .then((res) => {
+      // console.log(res.json());
+      return res.json();
+    })
+    .then(post => {
+      console.log(post);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
     return (
       <div className="App">
         <ThemeContext.Provider value={this.state.theme}>
