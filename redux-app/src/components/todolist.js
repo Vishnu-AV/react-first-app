@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { Button } from "react-bootstrap";
+
 import {
   addTodos,
   completeTodos,
@@ -28,62 +30,37 @@ const DisplayTodos = (props) => {
   return (
     <div className="displaytodos">
       <div className="buttons">
-        <button
+        <Button
+          variant="primary"
+          size="l"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => setSort("active")}
         >
           Active
-        </button>
-        <button
+        </Button>
+        <Button
+          variant="success"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => setSort("completed")}
         >
           Completed
-        </button>
-        <button
+        </Button>
+        <Button
+          variant="info"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => setSort("all")}
         >
           All
-        </button>
+        </Button>
       </div>
       <ul>
-          {props.todos.length > 0 && sort === "active"
-            ? props.todos.map((item) => {
-                return (
-                  item.completed === false && (
-                    <TodoItem
-                      key={item.id}
-                      item={item}
-                      removeTodo={props.removeTodo}
-                      updateTodo={props.updateTodo}
-                      completeTodo={props.completeTodo}
-                    />
-                  )
-                );
-              })
-            : null}
-          {props.todos.length > 0 && sort === "completed"
-            ? props.todos.map((item) => {
-                return (
-                  item.completed === true && (
-                    <TodoItem
-                      key={item.id}
-                      item={item}
-                      removeTodo={props.removeTodo}
-                      updateTodo={props.updateTodo}
-                      completeTodo={props.completeTodo}
-                    />
-                  )
-                );
-              })
-            : null}
-          {props.todos.length > 0 && sort === "all"
-            ? props.todos.map((item) => {
-                return (
+        {props.todos.length > 0 && sort === "active"
+          ? props.todos.map((item) => {
+              return (
+                item.completed === false && (
                   <TodoItem
                     key={item.id}
                     item={item}
@@ -91,9 +68,38 @@ const DisplayTodos = (props) => {
                     updateTodo={props.updateTodo}
                     completeTodo={props.completeTodo}
                   />
-                );
-              })
-            : null}
+                )
+              );
+            })
+          : null}
+        {props.todos.length > 0 && sort === "completed"
+          ? props.todos.map((item) => {
+              return (
+                item.completed === true && (
+                  <TodoItem
+                    key={item.id}
+                    item={item}
+                    removeTodo={props.removeTodo}
+                    updateTodo={props.updateTodo}
+                    completeTodo={props.completeTodo}
+                  />
+                )
+              );
+            })
+          : null}
+        {props.todos.length > 0 && sort === "all"
+          ? props.todos.map((item) => {
+              return (
+                <TodoItem
+                  key={item.id}
+                  item={item}
+                  removeTodo={props.removeTodo}
+                  updateTodo={props.updateTodo}
+                  completeTodo={props.completeTodo}
+                />
+              );
+            })
+          : null}
       </ul>
     </div>
   );

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { addTodos } from "../redux/reducer";
 import { useNavigate } from "react-router-dom";
+
+import { addTodos } from "../redux/reducer";
 
 const mapStateToProps = (state) => {
   return {
@@ -47,9 +48,9 @@ const Todos = (props) => {
       />
 
       <button
+      className="add-btn btn btn-primary"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="add-btn"
         onClick={() => add()}
       >
         Add
